@@ -52,6 +52,8 @@ import appeng.entity.EntityIds;
 import appeng.entity.EntityTinyTNTPrimed;
 import appeng.helpers.ICustomCollision;
 import appeng.hooks.DispenserBehaviorTinyTNT;
+import rpcore.RPCore;
+import rpcore.module.dimension.ForgeDimension;
 
 
 public class BlockTinyTNT extends AEBaseBlock implements ICustomCollision
@@ -181,9 +183,12 @@ public class BlockTinyTNT extends AEBaseBlock implements ICustomCollision
 	{
 		if( !w.isRemote )
 		{
+                    ForgeDimension d = RPCore.getDimensionRegistry().getForDimensionId(w.provider.dimensionId);
+                    if ((d == null || !d.isExplosionProtected())) {
 			final EntityTinyTNTPrimed primedTinyTNTEntity = new EntityTinyTNTPrimed( w, x + 0.5F, y + 0.5F, z + 0.5F, igniter );
 			w.spawnEntityInWorld( primedTinyTNTEntity );
 			w.playSoundAtEntity( primedTinyTNTEntity, "game.tnt.primed", 1.0F, 1.0F );
+                    }
 		}
 	}
 }
