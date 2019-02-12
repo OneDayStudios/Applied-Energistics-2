@@ -699,12 +699,12 @@ public final class Registration
 
 		if( AEConfig.instance.isFeatureEnabled( AEFeature.CertusQuartzWorldGen ) )
 		{
-			GameRegistry.registerWorldGenerator( new QuartzWorldGen(), 0 );
+			GameRegistry.registerWorldGenerator( new QuartzWorldGen(), 10 );
 		}
 
 		if( AEConfig.instance.isFeatureEnabled( AEFeature.MeteoriteWorldGen ) )
 		{
-			GameRegistry.registerWorldGenerator( new MeteoriteWorldGen(), 0 );
+			GameRegistry.registerWorldGenerator( new MeteoriteWorldGen(), 10 );
 		}
 
 		final IMovableRegistry mr = registries.movable();

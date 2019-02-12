@@ -116,8 +116,7 @@ public final class WorldGenRegistry implements IWorldGen
                 if (Loader.isModLoaded("RPCore")) {                
                     double chance = 100.0;
                     ForgeDimension d = RPCore.getDimensionRegistry().getForDimensionId(w.provider.dimensionId);
-                    if (!d.getType().equals(CelestialType.Landable)) return false; // Prevents spawning unless dimension is a Landable planet/moon.
-                    if (d.hasAtmosphere()) chance -= 50.0;
+                    if (d.getType().equals(CelestialType.Landable) && d.hasAtmosphere()) return false; // Prevents spawning unless dimension is a Landable planet/moon.
                     if (d.getPos().getCelestialClassesInSystem().contains(CelestialClass.CLASS_BLACKHOLE_STAR)) chance += 50.0;
                     if (d.getPos().getCelestialClassesInSystem().contains(CelestialClass.CLASS_NEUTRON_STAR)) chance += 25.0;
                     if (d.getCelestialClass().equals(CelestialClass.TEMPERATE_WORLD)) chance -= 30.0;
