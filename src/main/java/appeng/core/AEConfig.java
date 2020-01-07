@@ -210,8 +210,8 @@ public final class AEConfig extends Configuration implements IConfigurableObject
 
 		if( this.isFeatureEnabled( AEFeature.SpatialIO ) )
 		{
-			this.storageBiomeID = this.get( "spatialio", "storageBiomeID", this.storageBiomeID ).getInt( this.storageBiomeID );
-			this.storageProviderID = this.get( "spatialio", "storageProviderID", this.storageProviderID ).getInt( this.storageProviderID );
+			//this.storageBiomeID = this.get( "spatialio", "storageBiomeID", this.storageBiomeID ).getInt( this.storageBiomeID );
+			//this.storageProviderID = this.get( "spatialio", "storageProviderID", this.storageProviderID ).getInt( this.storageProviderID );
 			this.spatialPowerMultiplier = this.get( "spatialio", "spatialPowerMultiplier", this.spatialPowerMultiplier ).getDouble( this.spatialPowerMultiplier );
 			this.spatialPowerExponent = this.get( "spatialio", "spatialPowerExponent", this.spatialPowerExponent ).getDouble( this.spatialPowerExponent );
 		}
@@ -339,8 +339,8 @@ public final class AEConfig extends Configuration implements IConfigurableObject
 	{
 		if( this.isFeatureEnabled( AEFeature.SpatialIO ) )
 		{
-			this.get( "spatialio", "storageBiomeID", this.storageBiomeID ).set( this.storageBiomeID );
-			this.get( "spatialio", "storageProviderID", this.storageProviderID ).set( this.storageProviderID );
+			//this.get( "spatialio", "storageBiomeID", this.storageBiomeID ).set( this.storageBiomeID );
+			//this.get( "spatialio", "storageProviderID", this.storageProviderID ).set( this.storageProviderID );
 		}
 
 		this.get( "Client", "PowerUnit", this.selectedPowerUnit.name(), this.getListComment( this.selectedPowerUnit ) ).set( this.selectedPowerUnit.name() );

@@ -86,10 +86,10 @@ final class DimensionData implements IWorldDimensionData, IOnWorldStartable, IOn
 	@Override
 	public void onWorldStart()
 	{
-		for( final Integer storageCellDimID : this.storageCellDimensionIDs )
-		{
-			DimensionManager.registerDimension( storageCellDimID, AEConfig.instance.storageProviderID );
-		}
+//		for( final Integer storageCellDimID : this.storageCellDimensionIDs )
+//		{
+//			DimensionManager.registerDimension( storageCellDimID, AEConfig.instance.storageProviderID );
+//		}
 
 		this.config.save();
 	}
@@ -110,20 +110,20 @@ final class DimensionData implements IWorldDimensionData, IOnWorldStartable, IOn
 	@Override
 	public void addStorageCell( final int newStorageCellID )
 	{
-		this.storageCellDimensionIDs.add( newStorageCellID );
-		DimensionManager.registerDimension( newStorageCellID, AEConfig.instance.storageProviderID );
-
-		NetworkHandler.instance.sendToAll( new PacketNewStorageDimension( newStorageCellID ) );
-
-		final String[] values = new String[this.storageCellDimensionIDs.size()];
-
-		for( int x = 0; x < values.length; x++ )
-		{
-			values[x] = String.valueOf( this.storageCellDimensionIDs.get( x ) );
-		}
-
-		this.storageCellIDsProperty().set( values );
-		this.config.save();
+//		this.storageCellDimensionIDs.add( newStorageCellID );
+//		DimensionManager.registerDimension( newStorageCellID, AEConfig.instance.storageProviderID );
+//
+//		NetworkHandler.instance.sendToAll( new PacketNewStorageDimension( newStorageCellID ) );
+//
+//		final String[] values = new String[this.storageCellDimensionIDs.size()];
+//
+//		for( int x = 0; x < values.length; x++ )
+//		{
+//			values[x] = String.valueOf( this.storageCellDimensionIDs.get( x ) );
+//		}
+//
+//		this.storageCellIDsProperty().set( values );
+//		this.config.save();
 	}
 
 	@Override

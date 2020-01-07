@@ -114,7 +114,7 @@ dependencies {
     compile "codechicken:CodeChickenCore:${minecraft_version}-${code_chicken_core_version}:dev"
     compile "codechicken:NotEnoughItems:${minecraft_version}-${nei_version}:dev"
     compile "com.mod-buildcraft:buildcraft:${bc_version}:dev"
-    compile "pneumaticCraft:PneumaticCraft-${minecraft_version}:${pneumaticcraft_version}:api"
+    //compile "pneumaticCraft:PneumaticCraft-${minecraft_version}:${pneumaticcraft_version}:api"
 
     // provided APIs
     compile "li.cil.oc:OpenComputers:MC${minecraft_version}-${opencomputers_version}:api"

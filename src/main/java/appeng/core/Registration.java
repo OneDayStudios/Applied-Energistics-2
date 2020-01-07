@@ -190,42 +190,42 @@ public final class Registration
 
 		final AEConfig config = AEConfig.instance;
 
-		if( this.storageBiome == null )
-		{
-			if( force && config.storageBiomeID == -1 )
-			{
-				config.storageBiomeID = Platform.findEmpty( BiomeGenBase.getBiomeGenArray() );
-				if( config.storageBiomeID == -1 )
-				{
-					throw new IllegalStateException( "Biome Array is full, please free up some Biome ID's or disable spatial." );
-				}
+//		if( this.storageBiome == null )
+//		{
+//			if( force && config.storageBiomeID == -1 )
+//			{
+//				config.storageBiomeID = Platform.findEmpty( BiomeGenBase.getBiomeGenArray() );
+//				if( config.storageBiomeID == -1 )
+//				{
+//					throw new IllegalStateException( "Biome Array is full, please free up some Biome ID's or disable spatial." );
+//				}
+//
+//				this.storageBiome = new BiomeGenStorage( config.storageBiomeID );
+//				config.save();
+//			}
+//
+//			if( !force && config.storageBiomeID != -1 )
+//			{
+//				this.storageBiome = new BiomeGenStorage( config.storageBiomeID );
+//			}
+//		}
 
-				this.storageBiome = new BiomeGenStorage( config.storageBiomeID );
-				config.save();
-			}
-
-			if( !force && config.storageBiomeID != -1 )
-			{
-				this.storageBiome = new BiomeGenStorage( config.storageBiomeID );
-			}
-		}
-
-		if( config.storageProviderID != -1 )
-		{
-			DimensionManager.registerProviderType( config.storageProviderID, StorageWorldProvider.class, false );
-		}
-
-		if( config.storageProviderID == -1 && force )
-		{
-			config.storageProviderID = -11;
-
-			while( !DimensionManager.registerProviderType( config.storageProviderID, StorageWorldProvider.class, false ) )
-			{
-				config.storageProviderID--;
-			}
-
-			config.save();
-		}
+//		if( config.storageProviderID != -1 )
+//		{
+//			DimensionManager.registerProviderType( config.storageProviderID, StorageWorldProvider.class, false );
+//		}
+//
+//		if( config.storageProviderID == -1 && force )
+//		{
+//			config.storageProviderID = -11;
+//
+//			while( !DimensionManager.registerProviderType( config.storageProviderID, StorageWorldProvider.class, false ) )
+//			{
+//				config.storageProviderID--;
+//			}
+//
+//			config.save();
+//		}
 	}
 
 	private void registerCraftHandlers( final IRecipeHandlerRegistry registry )
