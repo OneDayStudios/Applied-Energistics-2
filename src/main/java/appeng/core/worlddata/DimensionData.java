@@ -99,10 +99,10 @@ final class DimensionData implements IWorldDimensionData, IOnWorldStartable, IOn
 	{
 		this.config.save();
 
-		for( final Integer storageCellDimID : this.storageCellDimensionIDs )
-		{
-			DimensionManager.unregisterDimension( storageCellDimID );
-		}
+//		for( final Integer storageCellDimID : this.storageCellDimensionIDs )
+//		{
+//			DimensionManager.unregisterDimension( storageCellDimID );
+//		}
 
 		this.storageCellDimensionIDs.clear();
 	}
